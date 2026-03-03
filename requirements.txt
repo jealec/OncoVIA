@@ -1,0 +1,14 @@
+pandas
+numpy
+pydicom
+nibabel
+scikit-learn
+langchain-core
+langchain-text-splitters
+langchain-huggingface
+langchain-community
+langchain-mistralai
+chromadb
+totalsegmentator
+python-dotenv
+openpyxl
