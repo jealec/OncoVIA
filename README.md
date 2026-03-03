@@ -10,6 +10,15 @@ Oncovia AI is an end-to-end medical pipeline that bridges 3D spatial data (CT sc
 
 Instead of relying solely on text, our system extracts quantitative data directly from medical imaging and uses an **Agentic RAG architecture** powered by **Mistral AI** to generate highly accurate, patient-specific follow-up reports.
 
+##  Team & Collaborators
+**🥇 1st Place Winners - Unboxed Hackathon**
+* [Ahmed Loughzali](https://www.linkedin.com/in/ahmed-loughzali-15a0b7257/)
+* [Ayoub Tarek](https://www.linkedin.com/in/ayoub-tarek-5283b8320/)  
+* [Gabriel Cheval](https://www.linkedin.com/in/gabriel-cheval-49ab4130b/) 
+* [Jeanne Leclerc](https://www.linkedin.com/in/jeanne-leclerc16/) 
+* [Adrien Schumacher](https://www.linkedin.com/in/adrien-schumacher-021710331/) 
+
+
 ## ⚙️ How it Works (The Pipeline)
 
 1. **3D Vision Extraction (Computer Vision):** Processes DICOM files using `TotalSegmentator` to generate anatomical masks. It automatically extracts tumor locations (e.g., *Right Upper Lobe*), volumes (cm³), and diameters (mm) with pre-trained models and our custom logic.
@@ -58,13 +67,7 @@ MISTRAL_API_KEY=your_mistral_api_key_here
 python src/main.py
 ```
 
-##  Team & Collaborators
-**🥇 1st Place Winners - Unboxed Hackathon**
-* [Ahmed Loughzali](https://www.linkedin.com/in/ahmed-loughzali-15a0b7257/)
-* [Ayoub Tarek](https://www.linkedin.com/in/ayoub-tarek-5283b8320/)  
-* [Gabriel Cheval](https://www.linkedin.com/in/gabriel-cheval-49ab4130b/) 
-* [Jeanne Leclerc](https://www.linkedin.com/in/jeanne-leclerc16/) 
-* [Adrien Schumacher](https://www.linkedin.com/in/adrien-schumacher-021710331/) 
+
 
 ## 🤝 Acknowledgments
 This project was built during the intense 30-hour **Unboxed Hackathon** hosted at **Centrale Lyon**. 
