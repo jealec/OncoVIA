@@ -1,17 +1,17 @@
-# Oncovia AI 🫁 
+# Oncovia AI 
 **Multimodal RAG Pipeline for Oncology (Computer Vision + LLM Agents)**
 
 **Live Interface / Front-end:** [https://oncovia-ai-flow.lovable.app/](https://oncovia-ai-flow.lovable.app/)
 
-> ⚠️ **Disclaimer:** This project is a Proof of Concept (POC) developed during a hackathon. Due to strict medical confidentiality (HIPAA/GDPR), all patient data, DICOM files, and medical reports shown in the interface or used in this public repository are **100% synthetic/fake**. No real patient data is exposed.
+> **Disclaimer:** This project is a Proof of Concept (POC) developed during a hackathon. Due to strict medical confidentiality (HIPAA/GDPR), all patient data, DICOM files, and medical reports shown in the interface or used in this public repository are ** synthetic**. No real patient data is exposed.
 
 ##  Overview
 Oncovia AI is an end-to-end medical pipeline that bridges 3D spatial data (CT scans) and longitudinal clinical history (radiology reports) to automate RECIST 1.1 tumor tracking. 
 
-Instead of relying solely on text, our system extracts quantitative data directly from medical imaging and uses an **Agentic RAG architecture** powered by **Mistral AI** to generate highly accurate, patient-specific follow-up reports.
+Instead of relying solely on text, our system extracts quantitative data directly from medical imaging and uses an **Agentic RAG architecture** powered by **Mistral AI** to generate accurate and patient-specific follow-up reports.
 
 ##  Team & Collaborators
-**🥇 1st Place Winners - Unboxed Hackathon**
+**1st Place Winners - Unboxed Hackathon**
 * [Ahmed Loughzali](https://www.linkedin.com/in/ahmed-loughzali-15a0b7257/)
 * [Ayoub Tarek](https://www.linkedin.com/in/ayoub-tarek-5283b8320/)  
 * [Gabriel Cheval](https://www.linkedin.com/in/gabriel-cheval-49ab4130b/) 
@@ -19,16 +19,16 @@ Instead of relying solely on text, our system extracts quantitative data directl
 * [Adrien Schumacher](https://www.linkedin.com/in/adrien-schumacher-021710331/) 
 
 
-## ⚙️ How it Works (The Pipeline)
+## The Pipeline
 
 1. **3D Vision Extraction (Computer Vision):** Processes DICOM files using `TotalSegmentator` to generate anatomical masks. It automatically extracts tumor locations (e.g., *Right Upper Lobe*), volumes (cm³), and diameters (mm) with pre-trained models and our custom logic.
-2. **Medical Vector Database:** Historical patient reports are embedded using `NeuML/pubmedbert-base-embeddings` and stored securely in a local `ChromaDB`, strictly filtered by Patient ID.
+2. **Medical Vector Database:** Historical patient reports are embedded using `NeuML/pubmedbert-base-embeddings` and stored securely in a local `ChromaDB`, filtered by Patient ID.
 3. **Agentic Retrieval (`mistral-medium`):** An AI agent takes the raw JSON anatomical data from the current scan and dynamically generates natural language queries to retrieve relevant historical lesions from the vector DB.
 4. **Dual-Target Synthesis (`mistral-large`):** The system synthesizes the extracted visual data with the retrieved historical text to generate two distinct reports:
-   - 🩺 **For the Radiologist:** A highly technical, RECIST 1.1 compliant report.
-   - 🫂 **For the Patient:** An empathetic, vulgarized, and non-alarmist summary. 
+   - **For the Radiologist:** A technical RECIST 1.1 compliant report.
+   - **For the Patient:** An empathetic, vulgarized, and non-alarmist summary. 
 
-## 🛠️ Tech Stack
+## Tech Stack
 * **LLMs:** Mistral API (`mistral-medium-latest`, `mistral-large-latest`)
 * **Framework:** LangChain
 * **Vector DB:** ChromaDB
@@ -69,12 +69,12 @@ python src/main.py
 
 
 
-## 🤝 Acknowledgments
+## Acknowledgments
 This project was built during the intense 30-hour **Unboxed Hackathon** hosted at **Centrale Lyon**. 
 
-A special thanks to the incredible partners who guided the MedTech challenges and made this project possible: **GE HealthCare** for their clinical expertise and trust, **Mistral AI** for providing the powerful models that run our reasoning engine, and **Lovable** for the frontend support. 
+A special thanks to the partners who guided the MedTech challenges and made this project possible: **GE HealthCare** for their clinical expertise, **Mistral AI** for providing the models that run our reasoning engine, and **Lovable** for the frontend support. 
 
-## 🔮 Perspectives
+## Perspectives
 * **Containerization:** Dockerize the end-to-end pipeline for plug-and-play deployment in clinical IT environments.
 * **On-Premise Deployment:** Transition to running local models to guarantee 100% data privacy and comply with strict medical regulations, removing the need for external internet access.
 * **UI Integration:** Package the Lovable frontend and the Python backend into a unified deployable service.
